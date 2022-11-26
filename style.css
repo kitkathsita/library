@@ -1,10 +1,14 @@
-::root {
+:root {
   margin: 0%;
+  --light-blue: #b0fbf2;
+  --light-pink: #f3a8c2;
+  --lighter-pink: #f6d1d6;
+  --light-yellow: #eef6b0;
 }
 
 body {
   margin: 0%;
-  background-color: #b0fbf2;
+  background-color: var(--light-blue);
 }
 
 /* header */
@@ -14,7 +18,7 @@ header {
   justify-content: center;
   gap: 20px;
   padding: 25px;
-  color: #f3a8c2;
+  color: var(--light-pink);
   background-color: white;
   font-family: 'Jua', sans-serif;
   -webkit-text-stroke: 1px black;
@@ -39,7 +43,7 @@ main {
 }
 
 .card{
-  background-color: #eef6b0;
+  background-color: var(--light-yellow);
   border-radius: 20px;
   padding: 20px;
   height: 300px;
@@ -54,13 +58,91 @@ main {
 }
 
 .addButton {
-  font-size: 100px;
-  color: #eef6b0;
-  -webkit-text-stroke: 1px black;
-  text-align: center;
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+.addButton > a {
+  font-size: 100px;
+  color: var(--light-yellow);
+  -webkit-text-stroke: 1px black;
+  text-align: center;
+  background-color: var(--light-blue);
+  border: none;
+}
+
+a > i {
+  cursor: pointer;
+}
+
+.overlay {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--lighter-pink);
+  opacity: 0;
+  transition: opacity 500ms;
+  width: 20vw;
+  height: max-content;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bigWrapper {
+  padding: 25px;
+  padding-top: 0;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper > h2 {
+  font-family: "Jua", sans-serif;
+  margin: 0%;
+  padding: 5px;
+  font-size: 45px;
+}
+
+.overlay > a {
+  text-decoration: none;
+  font-size: 25px;
+  padding: 5px;
+  text-align: right;
+  color: black;
+}
+
+.bigWrapper > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 30px;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+form > input {
+  height: 30px;
+  border-radius: 5px;
+  border: solid black 1px;
+  font-size: 20px;
+  padding: 2px;
+}
+
+form > button {
+  padding: 5px;
+  font-size: 30px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 /* footer */
@@ -72,7 +154,7 @@ footer  {
 
 /* other setails */
 
-.card:hover, .addButton:hover {
+.card:hover, .addButton>a:hover {
   transform: scale(1.1);
-  transition: 2s;
+  transition: 1s;
 }
