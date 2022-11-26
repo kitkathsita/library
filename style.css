@@ -11,7 +11,7 @@ body {
   background-color: var(--light-blue);
 }
 
-/* header */
+/* HEADER */
 
 header {
   display: flex;
@@ -33,7 +33,7 @@ header > h1 {
   font-size: 82px;
 }
 
-/* main */
+/* MAIN */
 
 main {
   display: grid;
@@ -42,20 +42,60 @@ main {
   gap: 25px;
 }
 
+/* tarjeta de cada libro */
+
 .card{
   background-color: var(--light-yellow);
   border-radius: 20px;
   padding: 20px;
   height: 300px;
+  font-family: 'Barlow Condensed', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card > h2 {
+.titleContent > h2 {
   margin: 0%;
+  font-size: 3.2vw;
 }
 
-.card > div > p {
+.titleContent > div > p {
   margin: 0%;
+  font-size: 1.8vw;
 }
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options > i {
+  font-size: 2vw;
+}
+
+.options > div > p {
+  margin: 0%;
+  font-size: 2vw;
+}
+
+.options > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.options > i {
+  cursor: pointer;
+}
+
+.options > i:hover {
+  color: var(--light-pink);
+}
+
+/* botón de agregar libro */ 
 
 .addButton {
   align-items: center;
@@ -75,6 +115,8 @@ main {
 a > i {
   cursor: pointer;
 }
+
+/* form para agregar el libro */
 
 .overlay {
   visibility: hidden;
@@ -129,6 +171,10 @@ a > i {
   opacity: 1;
 }
 
+.closed {
+  visibility: hidden;
+}
+
 form > input {
   height: 30px;
   border-radius: 5px;
@@ -145,14 +191,79 @@ form > button {
   margin-top: 10px;
 }
 
-/* footer */
+/* toggle button */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--light-pink);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--light-pink);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* FOOTER */
 
 footer  {
   font-size: 35px;
   text-align: center;
 }
 
-/* other setails */
+/* OTHER DETAILS */
 
 .card:hover, .addButton>a:hover {
   transform: scale(1.1);
