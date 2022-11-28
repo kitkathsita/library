@@ -70,9 +70,10 @@ function createCard() {
 
 function deleteElement() {
   let parentDelete = this.parentNode.previousElementSibling.firstChild.nextElementSibling
-  console.log(parentDelete.innerHTML)
   let indice = myLibrary.findIndex(bookElem => bookElem.title === parentDelete.innerHTML)
-  console.log(indice)
+  myLibrary.splice(indice, 1)
+  let divDelete = this.parentNode.parentNode
+  divDelete.remove()
 }
 
 function print() {
