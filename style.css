@@ -9,6 +9,8 @@
 body {
   margin: 0%;
   background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
 }
 
 /* HEADER */
@@ -55,7 +57,7 @@ main {
   justify-content: space-between;
 }
 
-.titleContent > h2 {
+.titleContent > .titulo {
   margin: 0%;
   font-size: 3.2vw;
 }
@@ -138,6 +140,7 @@ a > i {
 .bigWrapper {
   padding: 25px;
   padding-top: 0;
+  position: relative;
 }
 
 .wrapper {
